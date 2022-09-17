@@ -1,0 +1,29 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+build/
+idea
+
+# Optional npm cache directory
+.npm
+
+# next.js build output
+.next
+dist
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+.turbo/
+
+#config files
+*.env
+
+#coverage report
+**/cover.out
