@@ -19,7 +19,6 @@ const LangSwitcher = ({ className }: LangSwitcherProps) => {
       className={classNames('', {}, [className])}
     >
       {t('Language')}
-      asfd
     </Button>
   );
 };
