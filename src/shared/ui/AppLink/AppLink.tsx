@@ -13,13 +13,13 @@ interface AppLlinkProps extends LinkProps {
   theme?: AppLinkTheme;
 }
 
-export const AppLlink: FC<AppLlinkProps> = (props) => {
-  const { 
-    to, 
-    theme = AppLinkTheme.PRIMARY, 
-    children, 
-    className, 
-    ...otherProps 
+export const AppLink: FC<AppLlinkProps> = (props) => {
+  const {
+    to,
+    theme = AppLinkTheme.PRIMARY,
+    children,
+    className,
+    ...otherProps
   } = props;
   return (
     <Link
