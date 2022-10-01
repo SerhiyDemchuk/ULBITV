@@ -3,6 +3,7 @@ node_modules/
 jspm_packages/
 /build
 idea
+/storybook-static
 
 # Optional npm cache directory
 .npm
