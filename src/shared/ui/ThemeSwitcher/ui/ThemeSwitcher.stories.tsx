@@ -2,7 +2,7 @@
 import ThemeSwitcher from './ThemeSwitcher';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 
 export default {
   title: 'shared/ThemeSwitcher',
