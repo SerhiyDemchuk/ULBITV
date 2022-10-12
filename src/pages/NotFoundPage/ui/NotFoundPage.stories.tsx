@@ -1,4 +1,3 @@
-
 import NotFoundPage from './NotFoundPage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
