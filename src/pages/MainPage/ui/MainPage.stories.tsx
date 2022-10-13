@@ -1,4 +1,3 @@
-
 import MainPage from './MainPage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
