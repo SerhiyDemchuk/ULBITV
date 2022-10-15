@@ -6,7 +6,7 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 // import MainIcon from 'shared/assets/icon/main-20-20.svg';
 // import AboutIcon from 'shared/assets/icon/about-20-20.svg';
 import MainIcon from '../../../../shared/assets/icons/main-20-20.svg';
@@ -39,7 +39,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         size={ButtonSize.L}
         data-testid="sidebar-toggle"
         className={cls.collapsedBtn}
-        theme={ThemeButton.BACKGROUND_INVERTED}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
       >
         {collapsed ? '>' : '<'}
       </Button>

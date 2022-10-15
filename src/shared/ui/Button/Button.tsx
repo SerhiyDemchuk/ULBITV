@@ -2,7 +2,7 @@ import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-export enum ThemeButton {
+export enum ButtonTheme {
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
@@ -18,15 +18,17 @@ export enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  theme?: ThemeButton;
+  theme?: ButtonTheme;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
     theme,
     square,
+    disabled,
     children,
     className,
     size = ButtonSize.M,
@@ -36,10 +38,12 @@ export const Button: FC<ButtonProps> = (props) => {
     [cls[size]]: true,
     [cls[theme]]: true,
     [cls.square]: square,
+    [cls.disabled]: disabled,
   };
   return (
     <button
       type="button"
+      disabled={disabled}
       className={classNames(cls.Button, mods, [className])}
       {...otherProps}
     >
