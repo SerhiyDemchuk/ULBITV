@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 
 export default {
-  title: 'pages/AboutPage',
+  title: 'pages/ProfilePage',
   component: AboutPage,
   argTypes: {
     backgroundColor: { control: 'color' },

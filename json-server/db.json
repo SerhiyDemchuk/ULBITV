@@ -36,6 +36,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "name": "S",
+    "surname": "D",
+    "age": "28",
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Kyiv",
+    "username": "admin",
+    "avatar": "https://surl.li/dklgk"
   }
 }
