@@ -8,9 +8,9 @@ import {
 import { AxiosInstance } from 'axios';
 import { UserSchema } from 'entities/User';
 import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
 import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions, To } from 'react-router-dom';
+import { ProfileSchema } from 'entities/Profile/model/types/profile';
 
 export interface StateSchema {
   user: UserSchema;
@@ -41,5 +41,6 @@ export interface ThunkExtraArg {
 
 export interface ThunkConfig<T> {
   rejectValue: T;
-  extra: ThunkExtraArg
+  state: StateSchema;
+  extra: ThunkExtraArg;
 }

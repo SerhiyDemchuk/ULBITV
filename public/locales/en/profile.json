@@ -2,5 +2,14 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your name": "Your name",
-  "Your surname": "Your surname"
+  "Your surname": "Your surname",
+  "An error occurred": "An error occurred",
+  "Try to reload page": "Try to reload page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "City": "City",
+  "Your age": "Your age",
+  "Username": "Username",
+  "Link to avatar": "Link to avatar",
+  "Choose currency": "Choose currency"
 }

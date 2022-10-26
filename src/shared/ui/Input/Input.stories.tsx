@@ -2,7 +2,7 @@ import { Input } from './Input';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'shared/Input',
+  title: 'shared/Select',
   component: Input,
   argTypes: {
     backgroundColor: { control: 'color' },

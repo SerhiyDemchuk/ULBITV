@@ -36,10 +36,10 @@
     }
   ],
   "profile": {
-    "name": "S",
-    "surname": "D",
+    "firstname": "S",
+    "lastname": "D",
     "age": "28",
-    "currency": "UAH",
+    "currency": "USD",
     "country": "Ukraine",
     "city": "Kyiv",
     "username": "admin",
