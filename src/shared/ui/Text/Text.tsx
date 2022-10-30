@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import cls from './Text.module.scss';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 
 export enum TextAlign {
   RIGHT = 'right',

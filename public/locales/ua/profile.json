@@ -4,5 +4,9 @@
   "Your name": "Your ім'я",
   "Your surname": "Ваше прізвище",
   "An error occurred": "An error occurred",
-  "Try to reload page": "Try to reload page"
+  "Try to reload page": "Try to reload page",
+  "Дані не вказано": "Дані не вказано",
+  "Серверна помилка при зберіганні": "Серверна помилка при зберіганні",
+  "Некоректний вік": "Некоректний вік",
+  "Некоректний регіон": "Некоректний регіон"
 }
