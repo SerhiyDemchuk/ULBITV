@@ -18,5 +18,7 @@
   "Log out": "Log out",
   "Profile Page": "Profile Page",
   "Choose currency": "Choose currency",
-  "Choose country": "Choose country"
+  "Choose country": "Choose country",
+  "An error occurred while loading the article": "An error occurred while loading the article",
+  "error": "error"
 }
