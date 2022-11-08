@@ -16,5 +16,10 @@
   "Серверна помилка при зберіганні": "Серверна помилка при зберіганні",
   "Некоректний вік": "Некоректний вік",
   "Некоректний регіон": "Некоректний регіон",
-  "Ім'я та прізвище обов'зково": "Ім'я та прізвище обов'зково"
+  "Ім'я та прізвище обов'зково": "Ім'я та прізвище обов'зково",
+  "Name and surname are necessarily": "Name and surname are necessarily",
+  "Server error": "Server error",
+  "Incorrect region": "Incorrect region",
+  "Incorrect age": "Incorrect age",
+  "No data typed": "No data typed"
 }

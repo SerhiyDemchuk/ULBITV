@@ -20,7 +20,7 @@ interface InputProps extends HTMLInputProps {
 
 export const Input = memo((props: InputProps) => {
   const {
-    value,
+    value = '',
     onChange,
     readonly,
     autofocus,

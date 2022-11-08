@@ -11,6 +11,7 @@ import {
 } from 'entities/Profile';
 import { useSelector } from 'react-redux';
 import { Country } from 'entities/Country';
+import { useParams } from 'react-router-dom';
 import { Currency } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
 import { useCallback, useEffect } from 'react';
@@ -20,6 +21,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 
 interface ProfilePageProps {
   className?: string;
@@ -37,20 +39,21 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const readonly = useSelector(getProfileReadonly);
   const isLoading = useSelector(getProfileIsLoading);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
-    [ValidateProfileError.NO_DATA]: t('Дані не вказано'),
-    [ValidateProfileError.INCORRECT_AGE]: t('Некоректний вік'),
-    [ValidateProfileError.INCORRECT_COUNTRY]: t('Некоректний регіон'),
-    [ValidateProfileError.SERVER_ERROR]: t('Серверна помилка при зберіганні'),
-    [ValidateProfileError.INCORRECT_USER_DATA]: t('Ім\'я та прізвище обов\'зково'),
+    [ValidateProfileError.NO_DATA]: t('No data typed'),
+    [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect region'),
+    [ValidateProfileError.SERVER_ERROR]: t('Server error'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('Name and surname are necessarily'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }));

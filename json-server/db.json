@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,7 +95,7 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
@@ -105,13 +107,243 @@
       "id": "4",
       "text": "some comment 4",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "5",
       "text": "some comment 5",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdfasdf"
+      },
+      "id": "YjAVT9r"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "ifso-Am"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "edztDKR"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "o0aSxAz"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "MA5Oyvj"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "I3GOa5Z"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "ioQdGEK"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "MJwLkoZ"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "3QZCdIV"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "NF9D_5l"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "X1lD2XR"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "9aMlh2m"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "xIt_UVO"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "IVIz8pl"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "rgwX1AV"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "x2Je-JE"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "0OvZ4Zd"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasfasf"
+      },
+      "id": "eYoszA3"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asfasdfasdf"
+      },
+      "id": "2RlUgqE"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "hello"
+      },
+      "id": "JR0bihC"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asf"
+      },
+      "id": "AavXgOt"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfasdf"
+      },
+      "id": "48-YXl-"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "aaaa"
+      },
+      "id": "Ne-iCGV"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asfasfsadf"
+      },
+      "id": "zPXxvTL"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asfasdf"
+      },
+      "id": "8pdDvzG"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asfasfasfd"
+      },
+      "id": "-10nzuk"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asdfas"
+      },
+      "id": "XEaObch"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "2",
+        "text": "asfasf"
+      },
+      "id": "-ekIKQJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "AAAAAAA",
+      "id": "0dDdwOi"
     }
   ],
   "users": [
@@ -130,14 +362,28 @@
       "avatar": "https://surl.li/dklgk"
     }
   ],
-  "profile": {
-    "firstname": "S",
-    "lastname": "D",
-    "age": 2,
-    "currency": "USD",
-    "country": "Ukraine",
-    "city": "Kyiv",
-    "username": "admin",
-    "avatar": "https://surl.li/dklgk"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "S",
+      "lastname": "D",
+      "age": 2,
+      "currency": "USD",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "admin",
+      "avatar": "https://surl.li/dklgk"
+    },
+    {
+      "id": "2",
+      "firstname": "Serh",
+      "lastname": "D",
+      "age": 2,
+      "currency": "ZLT",
+      "country": "Poland",
+      "city": "Warsaw",
+      "username": "user",
+      "avatar": "https://surl.li/dklgk"
+    }
+  ]
 }
