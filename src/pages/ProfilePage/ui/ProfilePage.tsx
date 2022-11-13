@@ -22,6 +22,7 @@ import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ProfilePageProps {
   className?: string;
@@ -89,7 +90,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map((err) => (
           <Text
@@ -112,7 +113,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeLastname={onChangeLastname}
           onChangeFirstname={onChangeFirstname}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
