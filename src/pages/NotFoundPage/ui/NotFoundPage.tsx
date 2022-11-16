@@ -2,7 +2,7 @@ import { FC } from 'react';
 import cls from './NotFoundPage.module.scss';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 const NotFoundPage: FC = () => {
   const { t } = useTranslation();

@@ -16,7 +16,7 @@ class ErrorBoundary extends React.Component
   }
 
   static getDerivedStateFromError(error: Error) {
-    // Update state so the next render will show the fallback UI.
+    // Update state so the next render will show the fallback UISlice.
     return { hasError: true };
   }
 
@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component
     const { hasError } = this.state;
     const { children } = this.props;
     if (hasError) {
-      // You can render any custom fallback UI
+      // You can render any custom fallback UISlice
       return (
         <Suspense fallback="">
           <PageError />
