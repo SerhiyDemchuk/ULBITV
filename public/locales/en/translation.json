@@ -23,5 +23,12 @@
   "error": "error",
   "No comments": "No comments",
   "Type comment text": "Type comment text",
-  "Send": "Send"
+  "Send": "Send",
+  "by": "by",
+  "ascending": "ascending",
+  "descending": "descending",
+  "created": "created",
+  "title": "title",
+  "views": "views",
+  "All articles": "All articles"
 }
