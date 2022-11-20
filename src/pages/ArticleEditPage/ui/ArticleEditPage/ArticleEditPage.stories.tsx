@@ -1,4 +1,4 @@
-import { ArticleEditPage } from './ArticleEditPage';
+import ArticleEditPage from './ArticleEditPage';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
