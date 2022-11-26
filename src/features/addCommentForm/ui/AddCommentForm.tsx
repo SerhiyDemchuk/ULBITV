@@ -1,5 +1,16 @@
-import { memo, useCallback } from 'react';
+import {
+  memo,
+  useCallback,
+} from 'react';
+import {
+  Button,
+  ButtonTheme,
+} from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
+import {
+  addCommentFormActions,
+  addCommentFormReducer,
+} from '../model/slices/addCommentFormSlice';
 import { Input } from 'shared/ui/Input/Input';
 import cls from './AddCommentForm.module.scss';
 import { useTranslation } from 'react-i18next';
@@ -8,10 +19,12 @@ import {
   getAddCommentFormError,
 } from '../model/selectors/addCommentFormSelectors';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  ReducersList,
+  DynamicModuleLoader,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
   className?: string;
@@ -39,7 +52,11 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack
+        max
+        justify="between"
+        className={classNames(cls.AddCommentForm, {}, [className])}
+      >
         <Input
           value={text}
           className={cls.input}
@@ -52,7 +69,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
         >
           {t('Send')}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

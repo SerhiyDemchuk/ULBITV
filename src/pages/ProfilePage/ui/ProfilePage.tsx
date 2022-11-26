@@ -9,20 +9,21 @@ import {
   getProfileIsLoading,
   getProfileValidateErrors,
 } from 'entities/Profile';
+import { useCallback } from 'react';
+import { VStack } from 'shared/ui/Stack';
+import { Page } from 'widgets/Page/Page';
 import { useSelector } from 'react-redux';
 import { Country } from 'entities/Country';
 import { useParams } from 'react-router-dom';
 import { Currency } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
-import { useCallback, useEffect } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
-import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Page } from 'widgets/Page/Page';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 interface ProfilePageProps {
   className?: string;
@@ -91,28 +92,30 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames('', {}, [className])}>
-        <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map((err) => (
-          <Text
-            key={err}
-            theme={TextTheme.ERROR}
-            text={validateErrorTranslates[err]}
+        <VStack gap="16" max>
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map((err) => (
+            <Text
+              key={err}
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[err]}
+            />
+          ))}
+          <ProfileCard
+            error={error}
+            data={formData}
+            readonly={readonly}
+            isLoading={isLoading}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCountry={onChangeCountry}
+            onChangeCurrency={onChangeCurrency}
+            onChangeUsername={onChangeUsername}
+            onChangeLastname={onChangeLastname}
+            onChangeFirstname={onChangeFirstname}
           />
-        ))}
-        <ProfileCard
-          error={error}
-          data={formData}
-          readonly={readonly}
-          isLoading={isLoading}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCountry={onChangeCountry}
-          onChangeCurrency={onChangeCurrency}
-          onChangeUsername={onChangeUsername}
-          onChangeLastname={onChangeLastname}
-          onChangeFirstname={onChangeFirstname}
-        />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

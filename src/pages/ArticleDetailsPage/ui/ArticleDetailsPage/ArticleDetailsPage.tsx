@@ -1,4 +1,5 @@
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import { memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { CommentList } from 'entities/Comment';
@@ -58,26 +59,28 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text
-          size={TextSize.L}
-          className={cls.commentTitle}
-          title={t('Recommendations')}
-        />
-        <ArticleList
-          target="_blank"
-          articles={recommendations}
-          className={cls.recommendations}
-          isLoading={recommendationsIsLoading}
-        />
-        <Text
-          size={TextSize.L}
-          title={t('Comments')}
-          className={cls.commentTitle}
-        />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
+        <VStack gap="16" max>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text
+            size={TextSize.L}
+            className={cls.commentTitle}
+            title={t('Recommendations')}
+          />
+          <ArticleList
+            target="_blank"
+            articles={recommendations}
+            className={cls.recommendations}
+            isLoading={recommendationsIsLoading}
+          />
+          <Text
+            size={TextSize.L}
+            title={t('Comments')}
+            className={cls.commentTitle}
+          />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList isLoading={commentsIsLoading} comments={comments} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

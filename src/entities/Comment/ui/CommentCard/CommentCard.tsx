@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import { Comment } from 'entities/Comment';
+import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 import cls from './CommentCard.module.scss';
-import { useTranslation } from 'react-i18next';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Comment } from '../../model/types/comment';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -16,8 +16,6 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
-  const { t } = useTranslation();
-
   if (isLoading) {
     return (
       <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
@@ -35,12 +33,12 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
   }
 
   return (
-    <div className={classNames(cls.CommentCard, {}, [className])}>
+    <VStack max gap="8" className={classNames(cls.CommentCard, {}, [className])}>
       <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
         {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
         <Text className={cls.username} title={comment.user.username} />
       </AppLink>
       <Text className={cls.text} text={comment.text} />
-    </div>
+    </VStack>
   );
 });

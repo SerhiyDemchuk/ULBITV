@@ -1,10 +1,10 @@
 import { memo } from 'react';
-import { Comment } from 'entities/Comment';
+import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
-import cls from './CommentList.module.scss';
 import { useTranslation } from 'react-i18next';
+import { Comment } from '../../model/types/comment';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { CommentCard } from 'entities/Comment/ui/CommentCard/CommentCard';
+import { CommentCard } from '../../ui/CommentCard/CommentCard';
 
 interface CommentListProps {
   className?: string;
@@ -17,26 +17,33 @@ export const CommentList = memo(({ className, comments, isLoading }: CommentList
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentList, {}, [className])}>
+      <VStack
+        max
+        gap="16"
+        className={classNames('', {}, [className])}
+      >
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
-      </div>
+      </VStack>
     );
   }
 
   return (
-    <div className={classNames(cls.CommentList, {}, [className])}>
+    <VStack
+      max
+      gap="16"
+      className={classNames('', {}, [className])}
+    >
       {comments?.length
         ? comments.map((comment) => (
           <CommentCard
             key={comment.id}
             comment={comment}
             isLoading={isLoading}
-            className={cls.comment}
           />
         ))
         : <Text text={t('No comments')} />}
-    </div>
+    </VStack>
   );
 });

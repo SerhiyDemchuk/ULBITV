@@ -1,15 +1,15 @@
 import cls from './ProfileCard.module.scss';
 import { Input } from 'shared/ui/Input/Input';
 import { useTranslation } from 'react-i18next';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/ui/Loader';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
-import { Currency } from 'entities/Currency/model/types/currency';
-import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
 import { Country, CountrySelect } from 'entities/Country';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Currency } from 'entities/Currency/model/types/currency';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
 
 interface ProfileCardProps {
   className?: string;
@@ -47,22 +47,29 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+      <HStack
+        justify="center"
+        className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}
+      >
         <Loader />
-      </div>
+      </HStack>
     );
   }
 
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack
+        max
+        justify="center"
+        className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+      >
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
           title={t('An error occurred')}
           text={t('Try to reload page')}
         />
-      </div>
+      </HStack>
     );
   }
 
@@ -71,11 +78,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
   };
 
   return (
-    <div className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack
+      max
+      gap="8"
+      className={classNames(cls.ProfileCard, mods, [className])}
+    >
       {data?.avatar && (
-        <div className={cls.avatarWrapper}>
+        <HStack
+          max
+          justify="center"
+          className={cls.avatarWrapper}
+        >
           <Avatar src={data?.avatar} />
-        </div>
+        </HStack>
       )}
       <Input
         readonly={readonly}
@@ -86,7 +101,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
       />
       <Input
         readonly={readonly}
-        className={cls.input}
         value={data?.lastname}
         onChange={onChangeLastname}
         placeholder={t('Your surname')}
@@ -94,20 +108,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <Input
         value={data?.age}
         readonly={readonly}
-        className={cls.input}
         onChange={onChangeAge}
         placeholder={t('Your age')}
       />
       <Input
         value={data?.city}
         readonly={readonly}
-        className={cls.input}
         onChange={onChangeCity}
         placeholder={t('City')}
       />
       <Input
         readonly={readonly}
-        className={cls.input}
         value={data?.username}
         onChange={onChangeUsername}
         placeholder={t('Username')}
@@ -115,22 +126,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <Input
         readonly={readonly}
         value={data?.avatar}
-        className={cls.input}
         onChange={onChangeAvatar}
         placeholder={t('Link to avatar')}
       />
       <CurrencySelect
         readonly={readonly}
-        className={cls.input}
         value={data?.currency}
         onChange={onChangeCurrency}
       />
       <CountrySelect
         readonly={readonly}
-        className={cls.input}
         value={data?.country}
         onChange={onChangeCountry}
       />
-    </div>
+    </VStack>
   );
 };
