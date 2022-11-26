@@ -1,4 +1,4 @@
-import { UISchema } from 'features/UI';
+import { UISchema } from '../../../UI';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: UISchema = {

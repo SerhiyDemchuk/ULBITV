@@ -13,7 +13,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    'i18next',
+    'react-hooks',
+    'serg-plugin',
+    'ulbi-tv-plugin',
+    '@typescript-eslint',
+  ],
   rules: {
     indent: [2, 2],
     'react/jsx-indent': [2, 2],
@@ -51,6 +58,8 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
+    'serg-plugin/path-checker': 'error',
+    'ulbi-tv-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

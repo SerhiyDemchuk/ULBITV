@@ -67,6 +67,8 @@
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-serg-plugin": "^0.0.2",
+    "eslint-plugin-ulbi-tv-plugin": "^0.0.10",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.0",

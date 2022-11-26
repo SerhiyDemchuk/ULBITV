@@ -1,7 +1,7 @@
-import { validateProfileData } from './validateProfileData';
-import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { Currency } from 'entities/Currency';
+import { validateProfileData } from './validateProfileData';
+import { ValidateProfileError } from '../../../model/types/profile';
 
 const data = {
   firstname: 'S',

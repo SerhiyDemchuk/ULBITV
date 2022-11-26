@@ -1,8 +1,8 @@
-import { memo, useMemo, useState } from 'react';
 import cls from './Sidebar.module.scss';
 import { useSelector } from 'react-redux';
+import { memo, useMemo, useState } from 'react';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { SidebarItemType } from '../../model/types/sidebar';
 import { classNames } from 'shared/lib/classNames/classNames';
