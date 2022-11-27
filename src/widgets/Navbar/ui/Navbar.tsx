@@ -1,14 +1,16 @@
+import cls from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useDispatch, useSelector } from 'react-redux';
-import cls from 'widgets/Navbar/ui/Navbar.module.scss';
 import React, { memo, useCallback, useState } from 'react';
 import { getUserAuthData, userActions } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
   className?: string;
@@ -46,13 +48,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('Create article')}
         </AppLink>
-        <Button
-          onClick={onLogout}
-          className={cls.links}
-          theme={ButtonTheme.CLEAR_INVERTED}
-        >
-          {t('Log out')}
-        </Button>
+        <Dropdown
+          direction="bottom left"
+          className={cls.dropdown}
+          items={[
+            {
+              content: t('Exit'),
+              onClick: onLogout,
+            },
+            {
+              content: t('Profile'),
+              href: RoutePath.profile + authData.id,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </header>
     );
   }

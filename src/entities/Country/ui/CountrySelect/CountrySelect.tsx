@@ -34,9 +34,9 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     <ListBox
       value={value}
       items={options}
-      direction="top"
       readonly={readonly}
       className={className}
+      direction="top right"
       onChange={onChangeHandler}
       label={t('Choose country')}
       defaultValue={t('Choose country')}

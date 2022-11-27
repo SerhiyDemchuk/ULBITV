@@ -30,8 +30,8 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
     <ListBox
       value={value}
       items={options}
-      direction="top"
       readonly={readonly}
+      direction="top right"
       className={className}
       onChange={onChangeHandler}
       label={t('Choose currency')}
