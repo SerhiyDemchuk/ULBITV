@@ -8,16 +8,18 @@ import {
 import { AxiosInstance } from 'axios';
 import { UISchema } from 'features/UI';
 import { UserSchema } from 'entities/User';
+import { rtkApi } from 'shared/api/rtkApi';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { ProfileSchema } from 'entities/Profile/model/types/profile';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
   user: UserSchema;
   ui: UISchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Async reducers
   loginForm?: LoginSchema;

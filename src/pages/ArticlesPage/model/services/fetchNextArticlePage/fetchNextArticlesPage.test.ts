@@ -2,7 +2,7 @@ import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-jest.mock('../fetchArticleRecommendations/fetchArticleRecommendations');
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlesPage.test', () => {
   test('success', async () => {
@@ -20,7 +20,7 @@ describe('fetchNextArticlesPage.test', () => {
     await thunk.callThunk();
 
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+    expect(fetchArticlesList).toHaveBeenCalled();
   });
 
   test('fetchArticleList not called', async () => {

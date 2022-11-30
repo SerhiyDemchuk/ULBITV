@@ -1,9 +1,9 @@
+import { Profile } from '../../../Profile';
 import cls from './ProfileCard.module.scss';
 import { Input } from 'shared/ui/Input/Input';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/ui/Loader';
 import { Country, CountrySelect } from 'entities/Country';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';

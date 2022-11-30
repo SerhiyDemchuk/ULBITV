@@ -14,7 +14,7 @@ export const ${componentName} = memo((props: ${componentName}Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={classNames(cls.UserPage, {}, [className])}>
+    <div className={classNames(cls.${componentName}, {}, [className])}>
 
     </div>
   );

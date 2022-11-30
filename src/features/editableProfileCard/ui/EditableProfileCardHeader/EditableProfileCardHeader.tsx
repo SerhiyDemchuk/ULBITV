@@ -1,24 +1,24 @@
 import {
   getProfileData,
-  profileActions,
   updateProfileData,
   getProfileReadonly,
-} from 'entities/Profile';
-import { useCallback } from 'react';
+} from '../../../editableProfileCard';
 import { HStack } from 'shared/ui/Stack';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { getUserAuthData } from 'entities/User';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { profileActions } from '../../model/slice/profileSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
   className?: string;
 }
 
-export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
   const {
     className,
   } = props;
@@ -77,4 +77,4 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
       )}
     </HStack>
   );
-};
+});
