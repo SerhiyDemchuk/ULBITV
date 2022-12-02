@@ -14,5 +14,5 @@ export interface ProfileSchema {
   isLoading: boolean;
   error?: string;
   readonly: boolean;
-  validateErrors: ValidateProfileError[] | undefined;
+  validateErrors?: ValidateProfileError[] | undefined;
 }

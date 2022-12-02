@@ -46,8 +46,8 @@ export const Dropdown = memo((props: DropdownProps) => {
           const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
-              disabled={item.disabled}
               onClick={item.onClick}
+              disabled={item.disabled}
               className={classNames(cls.item, { [cls.active]: active }, [className])}
             >
               {item.content}
@@ -55,13 +55,22 @@ export const Dropdown = memo((props: DropdownProps) => {
           );
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                as={AppLink}
+                to={item.href}
+                key={Math.random()}
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );
           }
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              as={Fragment}
+              key={Math.random()}
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           );
