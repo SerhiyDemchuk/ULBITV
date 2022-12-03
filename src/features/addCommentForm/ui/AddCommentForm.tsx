@@ -6,6 +6,7 @@ import {
   Button,
   ButtonTheme,
 } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { useSelector } from 'react-redux';
 import {
   addCommentFormActions,
@@ -24,7 +25,6 @@ import {
   ReducersList,
   DynamicModuleLoader,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
   className?: string;

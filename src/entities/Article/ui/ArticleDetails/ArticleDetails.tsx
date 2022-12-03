@@ -1,4 +1,3 @@
-import { HStack, VStack } from 'shared/ui/Stack';
 import { useSelector } from 'react-redux';
 import { Icon } from 'shared/ui/Icon/Icon';
 import {
@@ -8,6 +7,7 @@ import {
 } from '../../model/selectors/articleDetails';
 import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { memo, useCallback, useEffect } from 'react';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -26,7 +26,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -82,13 +82,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <>
+      <VStack max>
         <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
-      </>
+      </VStack>
     );
   } else if (error) {
     content = (
@@ -135,6 +135,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <VStack
+        max
         gap="16"
         className={classNames(cls.ArticleDetails, {}, [className])}
       >

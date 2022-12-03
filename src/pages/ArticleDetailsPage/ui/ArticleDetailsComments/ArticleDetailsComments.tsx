@@ -1,7 +1,8 @@
 import { VStack } from 'shared/ui/Stack';
-import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CommentList } from 'entities/Comment';
+import { Loader } from 'shared/ui/Loader/ui/Loader';
+import { memo, useCallback, Suspense } from 'react';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddCommentForm } from 'features/addCommentForm';
@@ -14,7 +15,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 
 interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -39,7 +40,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         size={TextSize.L}
         title={t('Comments')}
       />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList isLoading={commentsIsLoading} comments={comments} />
     </VStack>
   );

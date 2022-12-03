@@ -8,6 +8,7 @@ import {
   getProfileIsLoading,
   getProfileValidateErrors,
 } from '../../../editableProfileCard';
+import { VStack } from 'shared/ui/Stack';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Country } from 'entities/Country';
@@ -24,11 +25,10 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from 'shared/ui/Stack';
 
 interface EditableProfileCardProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {

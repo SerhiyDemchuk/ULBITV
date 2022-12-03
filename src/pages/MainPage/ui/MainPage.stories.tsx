@@ -2,6 +2,7 @@ import MainPage from './MainPage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 export default {
   title: 'pages/MainPage',
@@ -9,9 +10,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  args: {
-    to: '/',
-  },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof MainPage>;
 
 const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...args} />;

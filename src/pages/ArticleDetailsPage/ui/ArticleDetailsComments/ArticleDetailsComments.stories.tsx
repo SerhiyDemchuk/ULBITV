@@ -1,5 +1,6 @@
-import { ArticleDetailsComments } from './ArticleDetailsComments';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ArticleDetailsComments } from './ArticleDetailsComments';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 export default {
   title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
@@ -12,4 +13,7 @@ export default {
 const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <ArticleDetailsComments {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  id: '1',
+};
+Normal.decorators = [StoreDecorator({})];
