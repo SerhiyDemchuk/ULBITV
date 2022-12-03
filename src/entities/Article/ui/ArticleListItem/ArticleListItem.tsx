@@ -11,12 +11,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import {
   Article,
-  ArticleView,
-  ArticleBlockType,
   ArticleTextBlock,
 } from '../../model/types/article';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleListItemProps {
   className?: string;

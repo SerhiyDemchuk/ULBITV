@@ -18,12 +18,12 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import {
   ReducersList,
   DynamicModuleLoader,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {

@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleListProps {
   className?: string;

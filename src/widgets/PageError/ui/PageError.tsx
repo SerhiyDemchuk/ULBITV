@@ -10,11 +10,12 @@ interface PageErrorProps {
 export const PageError = ({ className }: PageErrorProps) => {
   const { t } = useTranslation();
   const reloadPage = () => {
+    // eslint-disable-next-line no-restricted-globals
     location.reload();
   };
   return (
     <div className={classNames(cls.PageError, {}, [className])}>
-      {t('Unexpected error occured')}
+      {t('Unexpected error occurred')}
       <Button onClick={reloadPage}>{t('Reload page')}</Button>
     </div>
   );

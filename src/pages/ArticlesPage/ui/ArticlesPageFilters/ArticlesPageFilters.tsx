@@ -22,9 +22,9 @@ import {
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { ArticleType } from 'entities/Article/model/consts/articleConsts';
 
 interface ArticlesPageFiltersProps {
   className?: string;
