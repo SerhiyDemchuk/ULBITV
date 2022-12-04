@@ -1,8 +1,10 @@
 import cls from './Dropdown.module.scss';
 import { Menu } from '@headlessui/react';
-import { AppLink } from '../AppLink/AppLink';
-import { memo, Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
+import { AppLink } from '../../../AppLink/AppLink';
 import { DropdownDirection } from 'shared/types/ui';
+import popupCls from '../../styles/popup.module.scss';
+import { mapDirectionClass } from '../../styles/consts';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 export interface DropdownItem {
@@ -19,14 +21,7 @@ interface DropdownProps {
   direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
-};
-
-export const Dropdown = memo((props: DropdownProps) => {
+export const Dropdown = (props: DropdownProps) => {
   const {
     items,
     trigger,
@@ -37,18 +32,25 @@ export const Dropdown = memo((props: DropdownProps) => {
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-      <Menu.Button className={cls.btn}>
+    <Menu
+      as="div"
+      className={classNames('', {}, [className, popupCls.popup])}
+    >
+      <Menu.Button
+        className={popupCls.trigger}
+      >
         {trigger}
       </Menu.Button>
-      <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
+      <Menu.Items
+        className={classNames(cls.menu, {}, menuClasses)}
+      >
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
               onClick={item.onClick}
               disabled={item.disabled}
-              className={classNames(cls.item, { [cls.active]: active }, [className])}
+              className={classNames(cls.item, { [popupCls.active]: active }, [className])}
             >
               {item.content}
             </button>
@@ -78,4 +80,4 @@ export const Dropdown = memo((props: DropdownProps) => {
       </Menu.Items>
     </Menu>
   );
-});
+};
