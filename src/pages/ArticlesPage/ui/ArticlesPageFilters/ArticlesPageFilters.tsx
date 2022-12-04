@@ -1,8 +1,6 @@
 import {
   ArticleView,
-  ArticleTypeTabs,
   ArticleSortField,
-  ArticleSortSelector,
   ArticleViewSelector,
 } from 'entities/Article';
 import { SortOrder } from 'shared/types';
@@ -22,9 +20,11 @@ import {
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { articlesPageActions } from '../../model/slices/articlesPageSlice';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { ArticleType } from 'entities/Article/model/consts/articleConsts';
+import { articlesPageActions } from '../../model/slices/articlesPageSlice';
+import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 
 interface ArticlesPageFiltersProps {
   className?: string;

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ArticleType } from 'entities/Article';
+import { ArticleType } from '../../../Article';
 import { memo, useCallback, useMemo } from 'react';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import { classNames } from 'shared/lib/classNames/classNames';
