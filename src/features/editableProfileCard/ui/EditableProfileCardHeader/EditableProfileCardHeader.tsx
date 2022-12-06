@@ -3,16 +3,16 @@ import {
   updateProfileData,
   getProfileReadonly,
 } from '../../../editableProfileCard';
-import { HStack } from 'shared/ui/Stack';
+import { HStack } from '@/shared/ui/Stack';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { getUserAuthData } from 'entities/User';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { getUserAuthData } from '@/entities/User';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { profileActions } from '../../model/slice/profileSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 interface EditableProfileCardHeaderProps {
   className?: string;

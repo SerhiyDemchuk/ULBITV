@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon/Icon';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -7,23 +7,23 @@ import {
 } from '../../model/selectors/articleDetails';
 import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
-import { HStack, VStack } from 'shared/ui/Stack';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { memo, useCallback, useEffect } from 'react';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { ArticleBlock } from '../../model/types/article';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 interface ArticleDetailsProps {
   className?: string;

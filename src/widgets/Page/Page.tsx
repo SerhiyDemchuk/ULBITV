@@ -8,13 +8,13 @@ import {
 import cls from './Page.module.scss';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { useThrottle } from 'shared/lib/hooks/useThrottle';
-import { getUIScrollByPath, uiActions } from 'features/UI';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle';
+import { getUIScrollByPath, uiActions } from '@/features/UI';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 
 interface PageProps {
   className?: string;

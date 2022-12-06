@@ -1,9 +1,9 @@
 import cls from './Modal.module.scss';
 import React, { ReactNode } from 'react';
 import { Portal } from '../Portal/Portal';
-import { useModal } from 'shared/lib/hooks/useModal';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { useModal } from '@/shared/lib/hooks/useModal';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 interface ModalProps {
   lazy?: boolean;

@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ArticleList } from '@/entities/Article';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
@@ -28,7 +28,6 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
       <ArticleList
         target="_blank"
         articles={articles}
-        virtualized={false}
       />
     </VStack>
   );

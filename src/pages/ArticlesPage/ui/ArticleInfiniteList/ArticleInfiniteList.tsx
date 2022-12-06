@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useSearchParams } from 'react-router-dom';
 import cls from './ArticleInfiniteList.module.scss';
 import {
@@ -10,10 +10,10 @@ import {
   getArticlesPageError,
   getArticlesPageIsLoading,
 } from '../../model/selectors/articlesPageSelectors';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticleInfiniteListProps {

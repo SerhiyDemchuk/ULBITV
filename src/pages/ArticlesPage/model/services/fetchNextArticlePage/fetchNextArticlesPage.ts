@@ -4,7 +4,7 @@ import {
   getArticlesPageHasMore,
   getArticlesPageIsLoading,
 } from '../../../model/selectors/articlesPageSelectors';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { articlesPageActions } from '../../../model/slices/articlesPageSlice';
 import { fetchArticlesList } from '../../../model/services/fetchArticlesList/fetchArticlesList';
 

@@ -6,15 +6,15 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { UISchema } from 'features/UI';
-import { UserSchema } from 'entities/User';
-import { rtkApi } from 'shared/api/rtkApi';
-import { LoginSchema } from 'features/AuthByUsername';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { ProfileSchema } from 'features/editableProfileCard';
+import { UISchema } from '@/features/UI';
+import { UserSchema } from '@/entities/User';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
   user: UserSchema;
