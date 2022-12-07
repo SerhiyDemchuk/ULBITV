@@ -1,6 +1,6 @@
 import cls from './Navbar.module.scss';
-import { HStack } from '@/shared/ui/Stack';
 import { useSelector } from 'react-redux';
+import { HStack } from '@/shared/ui/Stack';
 import { useTranslation } from 'react-i18next';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
@@ -35,8 +35,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Text
           className={cls.appName}
-          title={t('Ulbi TV App')}
           theme={TextTheme.INVERTED}
+          title={t('Ulbi TV App')}
         />
         <AppLink
           to={RoutePath.article_create}
