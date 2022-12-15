@@ -1,5 +1,4 @@
 import { PageError } from './PageError';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 

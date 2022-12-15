@@ -2,7 +2,7 @@ import cls from './Modal.module.scss';
 import React, { ReactNode } from 'react';
 import { Portal } from '../Portal/Portal';
 import { useModal } from '@/shared/lib/hooks/useModal';
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 interface ModalProps {

@@ -1,7 +1,6 @@
 import ProfilePage from './ProfilePage';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { Theme } from '@/app/providers/ThemeProvider';
 import avatar from '@/shared/assets/tests/avatar.jpg';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';

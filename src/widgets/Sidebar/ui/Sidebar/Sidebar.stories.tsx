@@ -1,5 +1,4 @@
 import { Sidebar } from './Sidebar';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';

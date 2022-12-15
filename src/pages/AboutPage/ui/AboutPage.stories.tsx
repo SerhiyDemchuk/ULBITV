@@ -1,5 +1,4 @@
 import AboutPage from './AboutPage';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
