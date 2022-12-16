@@ -123,20 +123,20 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.3",
-    "react-redux": "^7.2.9",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.2.1"
   },
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }

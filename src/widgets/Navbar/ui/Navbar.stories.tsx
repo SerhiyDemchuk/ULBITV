@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from './Navbar';
+import { Theme } from '@/shared/const/theme';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';

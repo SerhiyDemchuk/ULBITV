@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, TextSize, TextTheme } from '../Text/Text';
+import { Theme } from '@/shared/const/theme';
+import { Text, TextSize, TextTheme } from '../Text';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 

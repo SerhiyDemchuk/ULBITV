@@ -1,4 +1,5 @@
 import ProfilePage from './ProfilePage';
+import { Theme } from '@/shared/const/theme';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatar from '@/shared/assets/tests/avatar.jpg';
