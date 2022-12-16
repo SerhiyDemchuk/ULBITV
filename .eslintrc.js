@@ -18,6 +18,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'serg-plugin',
+    'unused-imports',
     'ulbi-tv-plugin',
     '@typescript-eslint',
   ],
@@ -25,6 +26,7 @@ module.exports = {
     indent: [2, 2],
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    'unused-imports/no-unused-imports': 'error',
     'react/jsx-filename-extension': [2, {
       extensions: ['.js', '.jsx', '.tsx'],
     }],
