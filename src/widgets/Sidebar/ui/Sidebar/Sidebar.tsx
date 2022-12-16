@@ -8,7 +8,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { SidebarItemType } from '../../model/types/sidebar';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 
 interface SidebarProps {
   className?: string;

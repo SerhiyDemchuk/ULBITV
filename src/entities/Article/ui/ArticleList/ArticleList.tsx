@@ -1,7 +1,7 @@
 import cls from './ArticleList.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Article } from '../../model/types/article';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { ArticleView } from '../../model/consts/articleConsts';
 import { classNames } from '@/shared/lib/classNames/classNames';

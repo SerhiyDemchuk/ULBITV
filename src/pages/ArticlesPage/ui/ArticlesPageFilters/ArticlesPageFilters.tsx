@@ -6,8 +6,8 @@ import {
 import { SortOrder } from '@/shared/types';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticlesPageFilters.module.scss';
 import {

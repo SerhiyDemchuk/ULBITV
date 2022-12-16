@@ -3,7 +3,7 @@ import {
   Button,
   ButtonSize,
   ButtonTheme,
-} from '@/shared/ui/Button/Button';
+} from '@/shared/ui/Button';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 

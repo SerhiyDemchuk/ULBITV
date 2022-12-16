@@ -5,14 +5,14 @@ import {
 import {
   Button,
   ButtonTheme,
-} from '@/shared/ui/Button/Button';
+} from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { useSelector } from 'react-redux';
 import {
   addCommentFormActions,
   addCommentFormReducer,
 } from '../model/slices/addCommentFormSlice';
-import { Input } from '@/shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input';
 import cls from './AddCommentForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import {

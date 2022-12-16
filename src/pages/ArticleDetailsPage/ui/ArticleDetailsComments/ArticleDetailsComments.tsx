@@ -1,9 +1,9 @@
 import { VStack } from '@/shared/ui/Stack';
 import { useTranslation } from 'react-i18next';
 import { CommentList } from '@/entities/Comment';
-import { Loader } from '@/shared/ui/Loader/ui/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import { memo, useCallback, Suspense } from 'react';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { classNames } from '@/shared/lib/classNames/classNames';

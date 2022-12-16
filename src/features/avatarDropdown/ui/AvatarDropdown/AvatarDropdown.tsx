@@ -7,7 +7,7 @@ import {
 import { Dropdown } from '@/shared/ui/Popups';
 import { useTranslation } from 'react-i18next';
 import cls from './AvatarDropdown.module.scss';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
