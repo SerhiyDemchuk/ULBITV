@@ -6,4 +6,3 @@ export { ArticleSortField } from './model/consts/articleConsts';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { getArticleDetailsData } from './model/selectors/articleDetails';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
