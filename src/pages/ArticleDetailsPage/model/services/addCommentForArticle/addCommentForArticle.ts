@@ -5,9 +5,11 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails';
 import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const addCommentForArticle = createAsyncThunk<Comment,
+export const addCommentForArticle = createAsyncThunk<
+  Comment,
   string,
-  ThunkConfig<string>>(
+  ThunkConfig<string>
+  >(
     'articleDetails/addCommentForArticle',
     async (text, thunkApi) => {
       const {

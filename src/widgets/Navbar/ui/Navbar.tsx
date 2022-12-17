@@ -3,15 +3,15 @@ import { useSelector } from 'react-redux';
 import { HStack } from '@/shared/ui/Stack';
 import { useTranslation } from 'react-i18next';
 import { getUserAuthData } from '@/entities/User';
-import { LoginModal } from '@/features/AuthByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text';
+import { LoginModal } from '@/features/AuthByUsername';
+import { getRouteArticles } from '@/shared/const/router';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import React, { memo, useCallback, useState } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { NotificationButton } from '@/features/notificationButton';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { NotificationButton } from '@/features/notificationButton';
 
 interface NavbarProps {
   className?: string;
@@ -39,7 +39,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           title={t('Ulbi TV App')}
         />
         <AppLink
-          to={RoutePath.article_create}
+          to={getRouteArticles()}
           theme={AppLinkTheme.SECONDARY}
         >
           {t('Create article')}

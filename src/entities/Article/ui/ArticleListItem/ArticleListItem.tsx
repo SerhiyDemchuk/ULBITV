@@ -1,21 +1,18 @@
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
 import { Card } from '@/shared/ui/Card';
-import { useTranslation } from 'react-i18next';
-import cls from './ArticleListItem.module.scss';
 import { Avatar } from '@/shared/ui/Avatar';
 import { AppLink } from '@/shared/ui/AppLink';
+import { useTranslation } from 'react-i18next';
+import cls from './ArticleListItem.module.scss';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import {
-  Article,
-  ArticleTextBlock,
-} from '../../model/types/article';
-import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
-import { RoutePath } from '@/shared/const/router';
+import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleListItemProps {
   className?: string;
@@ -82,7 +79,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           <div className={cls.footer}>
             <AppLink
               target={target}
-              to={RoutePath.article_details + article.id}
+              to={getRouteArticleDetails(article.id)}
             >
               <Button
                 theme={ButtonTheme.OUTLINE}
@@ -100,7 +97,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card className={cls.card}>
