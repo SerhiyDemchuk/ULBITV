@@ -22,11 +22,6 @@ export function buildPlugins({
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
-    }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
       failOnError: true,
@@ -55,6 +50,11 @@ export function buildPlugins({
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
         chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+      new CopyPlugin({
+        patterns: [
+          { from: paths.locales, to: paths.buildLocales },
+        ],
       }),
     );
   }
