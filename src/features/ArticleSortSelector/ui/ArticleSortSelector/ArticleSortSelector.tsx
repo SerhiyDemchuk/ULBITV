@@ -1,5 +1,5 @@
 import { memo, useMemo } from 'react';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticleSortSelector.module.scss';
 import { ArticleSortField } from '@/entities/Article';

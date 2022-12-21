@@ -15,11 +15,13 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { TestsProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestsProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
+
 }
 
 export const PAGE_ID = 'PAGE_ID';
@@ -56,6 +58,7 @@ export const Page = memo((props: PageProps) => {
       id={PAGE_ID}
       ref={wrapperRef}
       onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
       className={classNames(cls.Page, {}, [className])}
     >
       {children}

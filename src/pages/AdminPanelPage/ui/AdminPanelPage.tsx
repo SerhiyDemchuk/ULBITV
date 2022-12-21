@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const AdminPanelPage: FC = () => {
   const { t } = useTranslation('admin');
   return (
-    <Page>
+    <Page data-testid="AdminPanelPage">
       {t('Admin Panel Page')}
     </Page>
   );

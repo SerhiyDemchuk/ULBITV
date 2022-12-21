@@ -2,7 +2,7 @@ import { Card } from '@/shared/ui/Card';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticlesPageFilters.module.scss';
 import {
