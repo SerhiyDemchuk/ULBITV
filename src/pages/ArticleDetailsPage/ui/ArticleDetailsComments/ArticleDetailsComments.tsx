@@ -1,12 +1,13 @@
+import { useSelector } from 'react-redux';
 import { VStack } from '@/shared/ui/Stack';
+import { Loader } from '@/shared/ui/Loader';
 import { useTranslation } from 'react-i18next';
 import { CommentList } from '@/entities/Comment';
-import { Loader } from '@/shared/ui/Loader';
-import { memo, useCallback, Suspense } from 'react';
 import { Text, TextSize } from '@/shared/ui/Text';
-import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback, Suspense } from 'react';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
@@ -22,7 +23,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   const { className, id } = props;
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 

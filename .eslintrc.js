@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -13,15 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'i18next',
-    'react-hooks',
-    'serg-plugin',
-    'unused-imports',
-    'ulbi-tv-plugin',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', 'i18next', 'react-hooks', 'serg-plugin', 'unused-imports', 'ulbi-tv-plugin', '@typescript-eslint'],
   rules: {
     indent: [2, 2],
     'react/jsx-indent': [2, 2],
@@ -45,18 +37,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: [
-        'as',
-        'data-testid',
-        'to',
-        'target',
-        'justify',
-        'align',
-        'direction',
-        'gap',
-        'role',
-        'border',
-      ],
+      ignoreAttribute: ['as', 'data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'role', 'border'],
     }],
     'max-len': ['error', {
       ignoreComments: true,
