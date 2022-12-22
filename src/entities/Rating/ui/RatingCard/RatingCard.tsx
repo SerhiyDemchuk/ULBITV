@@ -1,14 +1,13 @@
 import { Card } from '@/shared/ui/Card';
 import { Text } from '@/shared/ui/Text';
-import { useTranslation } from 'react-i18next';
 import { Modal } from '@/shared/ui/Modal';
 import { Input } from '@/shared/ui/Input';
-import { HStack, VStack } from '@/shared/ui/Stack';
 import { Drawer } from '@/shared/ui/Drawer';
+import { useTranslation } from 'react-i18next';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { memo, useCallback, useState } from 'react';
-import { BrowserView, MobileView } from 'react-device-detect';
 import { StarRating } from '@/shared/ui/StarRating';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 
 interface RatingCardProps {
@@ -63,13 +62,18 @@ export const RatingCard = memo((props: RatingCardProps) => {
       <Input
         value={feedback}
         onChange={setFeedback}
+        data-testid="RatingCard.Input"
         placeholder={t('Your feedback')}
       />
     </>
   );
 
   return (
-    <Card className={className} max>
+    <Card
+      max
+      className={className}
+      data-testid="RatingCard"
+    >
       <VStack align="center" gap="8">
         <Text title={starsCount ? t('Thanks for your mark!') : title} />
         <StarRating
@@ -83,10 +87,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
           <VStack max gap="32">
             {modalContent}
             <HStack max gap="16" justify="end">
-              <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>
+              <Button
+                onClick={cancelHandle}
+                data-testid="RatingCard.Close"
+                theme={ButtonTheme.OUTLINE_RED}
+              >
                 {t('Close')}
               </Button>
-              <Button onClick={acceptHandle}>
+              <Button
+                onClick={acceptHandle}
+                data-testid="RatingCard.Send"
+              >
                 {t('Send')}
               </Button>
             </HStack>

@@ -6,13 +6,13 @@ import {
   Button,
   ButtonTheme,
 } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
 import { useSelector } from 'react-redux';
+import { Input } from '@/shared/ui/Input';
+import { HStack } from '@/shared/ui/Stack';
 import {
   addCommentFormActions,
   addCommentFormReducer,
 } from '../model/slices/addCommentFormSlice';
-import { Input } from '@/shared/ui/Input';
 import cls from './AddCommentForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import {
@@ -55,17 +55,20 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
       <HStack
         max
         justify="between"
+        data-testid="AddCommentForm"
         className={classNames(cls.AddCommentForm, {}, [className])}
       >
         <Input
           value={text}
           className={cls.input}
+          data-testid="AddCommentForm.Input"
           onChange={onCommentTextChange}
           placeholder={t('Type comment text')}
         />
         <Button
           onClick={onSendHandler}
           theme={ButtonTheme.OUTLINE}
+          data-testid="AddCommentForm.Button"
         >
           {t('Send')}
         </Button>

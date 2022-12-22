@@ -1,5 +1,6 @@
-import { useSelector } from 'react-redux';
 import { Icon } from '@/shared/ui/Icon';
+import { useSelector } from 'react-redux';
+import { Avatar } from '@/shared/ui/Avatar';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -7,14 +8,13 @@ import {
 } from '../../model/selectors/articleDetails';
 import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Avatar } from '@/shared/ui/Avatar';
-import { memo, useCallback, useEffect } from 'react';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleBlock } from '../../model/types/article';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
@@ -112,7 +112,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             className={cls.avatar}
           />
         </HStack>
-        <VStack max gap="4">
+        <VStack
+          max
+          gap="4"
+          data-testid="ArticleDetails.Info"
+        >
           <Text
             size={TextSize.L}
             className={cls.title}
