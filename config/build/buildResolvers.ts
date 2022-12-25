@@ -3,7 +3,9 @@ import { BuildOptions } from './types/config';
 
 export function buildResolvers(options: BuildOptions): ResolveOptions {
   return {
-    alias: {},
+    alias: {
+      '@': options.paths.src,
+    },
     mainFiles: ['index'],
     preferAbsolute: true,
     extensions: ['.tsx', '.ts', '.js'],

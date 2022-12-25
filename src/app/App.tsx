@@ -1,20 +1,24 @@
-import './styles/index.scss';
-import { Suspense } from 'react';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from '@/entities/User';
+import { Suspense, useEffect } from 'react';
 import { AppRouter } from './providers/router';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 function App() {
-  const { theme } = useTheme();
+  const dispatch = useDispatch();
+  const inited = useSelector(getUserInited);
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="">
+    <div className={classNames('app', {}, [])}>
+      <Suspense fallback=''>
         <Navbar />
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebar />
-          <AppRouter />
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>

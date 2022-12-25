@@ -1,11 +1,10 @@
-
 import AboutPage from './AboutPage';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 export default {
-  title: 'pages/AboutPage',
+  title: 'pages/ProfilePage',
   component: AboutPage,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,7 +14,9 @@ export default {
   },
 } as ComponentMeta<typeof AboutPage>;
 
-const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage {...args} />;
+const Template: ComponentStory<typeof AboutPage> = (args) => (
+  <AboutPage {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

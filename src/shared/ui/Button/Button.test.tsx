@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button } from 'shared/ui/Button/Button';
-import { ThemeButton } from './Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 describe('Button', () => {
   test('Test render', () => {
@@ -9,7 +8,9 @@ describe('Button', () => {
   });
 
   test('Test clear theme', () => {
-    render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
+    // eslint-disable-next-line no-undef
+    render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
     expect(screen.getByText('TEST')).toHaveClass('clear');
+    screen.debug();
   });
 });
