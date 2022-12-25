@@ -12,9 +12,9 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { ProfileSchema } from '@/features/editableProfileCard';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
-import { ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
   user: UserSchema;

@@ -1,5 +1,5 @@
-export type { ProfileSchema } from './model/types/editableProfileCardSchema';
 export { profileActions, profileReducer } from './model/slice/profileSlice';
+export type { ProfileSchema } from './model/types/editableProfileCardSchema';
 export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';
 export { getProfileError } from './model/selectors/getProfileError/getProfileError';

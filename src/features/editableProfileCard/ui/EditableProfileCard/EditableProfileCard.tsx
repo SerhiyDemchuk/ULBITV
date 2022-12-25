@@ -24,7 +24,9 @@ import {
   ReducersList,
   DynamicModuleLoader,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { EditableProfileCardHeader } from '../../ui/EditableProfileCardHeader/EditableProfileCardHeader';
+import {
+  EditableProfileCardHeader,
+} from '@/features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
   className?: string;
