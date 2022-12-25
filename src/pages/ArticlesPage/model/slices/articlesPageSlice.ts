@@ -1,11 +1,18 @@
 import { SortOrder } from '@/shared/types/sort';
 import {
-  Article, ArticleSortField, ArticleType, ArticleView,
+  Article,
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
 } from '@/entities/Article';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticlesPageSchema } from '../../../ArticlesPage';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -54,7 +61,9 @@ export const articlesPageSlice = createSlice({
       state.search = action.payload;
     },
     initState: (state) => {
-      const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+      const view = localStorage.getItem(
+        ARTICLES_VIEW_LOCALSTORAGE_KEY,
+      ) as ArticleView;
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 9;
       state._inited = true;
@@ -70,10 +79,7 @@ export const articlesPageSlice = createSlice({
           articlesAdapter.removeAll(state);
         }
       })
-      .addCase(fetchArticlesList.fulfilled, (
-        state,
-        action,
-      ) => {
+      .addCase(fetchArticlesList.fulfilled, (state, action) => {
         state.isLoading = false;
         state.hasMore = action.payload.length >= state.limit;
 
@@ -90,7 +96,5 @@ export const articlesPageSlice = createSlice({
   },
 });
 
-export const {
-  reducer: articlesPageReducer,
-  actions: articlesPageActions,
-} = articlesPageSlice;
+export const { reducer: articlesPageReducer, actions: articlesPageActions } =
+  articlesPageSlice;

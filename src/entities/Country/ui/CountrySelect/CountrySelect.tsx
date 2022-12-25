@@ -18,17 +18,15 @@ interface CountrySelectProps {
 }
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {
-    value,
-    onChange,
-    readonly,
-    className,
-  } = props;
+  const { value, onChange, readonly, className } = props;
   const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Country);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Country);
+    },
+    [onChange],
+  );
 
   return (
     <ListBox
@@ -36,7 +34,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
       items={options}
       readonly={readonly}
       className={className}
-      direction="top right"
+      direction='top right'
       onChange={onChangeHandler}
       label={t('Choose country')}
       defaultValue={t('Choose country')}

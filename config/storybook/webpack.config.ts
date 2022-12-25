@@ -3,7 +3,7 @@ import { BuildPaths } from '../build/types/config';
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
-export default ({ config }: {config: webpack.Configuration}) => {
+export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     build: '',
     entry: '',
@@ -31,10 +31,12 @@ export default ({ config }: {config: webpack.Configuration}) => {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   });
-  config!.plugins!.push(new DefinePlugin({
-    __IS_DEV__: JSON.stringify(true),
-    __API__: JSON.stringify('https://testapi.ua'),
-    __PROJECT__: JSON.stringify('storybook'),
-  }));
+  config!.plugins!.push(
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(true),
+      __API__: JSON.stringify('https://testapi.ua'),
+      __PROJECT__: JSON.stringify('storybook'),
+    }),
+  );
   return config;
 };

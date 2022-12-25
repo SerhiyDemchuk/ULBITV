@@ -38,13 +38,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           theme={TextTheme.INVERTED}
           title={t('Ulbi TV App')}
         />
-        <AppLink
-          to={getRouteArticles()}
-          theme={AppLinkTheme.SECONDARY}
-        >
+        <AppLink to={getRouteArticles()} theme={AppLinkTheme.SECONDARY}>
           {t('Create article')}
         </AppLink>
-        <HStack gap="16" className={cls.actions}>
+        <HStack gap='16' className={cls.actions}>
           <NotificationButton />
           <AvatarDropdown />
         </HStack>
@@ -62,10 +59,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {t('Log in')}
       </Button>
       {isAuthModal && (
-        <LoginModal
-          isOpen={isAuthModal}
-          onClose={onCloseModal}
-        />
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
     </header>
   );

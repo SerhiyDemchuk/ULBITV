@@ -17,21 +17,22 @@ interface CurrencySelectProps {
 }
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
-  const {
-    value, onChange, className, readonly,
-  } = props;
+  const { value, onChange, className, readonly } = props;
   const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Currency);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Currency);
+    },
+    [onChange],
+  );
 
   return (
     <ListBox
       value={value}
       items={options}
       readonly={readonly}
-      direction="top right"
+      direction='top right'
       className={className}
       onChange={onChangeHandler}
       label={t('Choose currency')}

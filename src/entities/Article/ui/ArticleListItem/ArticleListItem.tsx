@@ -11,7 +11,10 @@ import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Article, ArticleTextBlock } from '../../model/types/article';
-import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
+import {
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -24,12 +27,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    view,
-    target,
-    article,
-    className,
-  } = props;
+  const { view, target, article, className } = props;
   const { t } = useTranslation();
 
   const types = <Text className={cls.types} text={article.type.join(', ')} />;
@@ -47,34 +45,22 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
       <div
-        data-testid="ArticleListItem"
+        data-testid='ArticleListItem'
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>
           <div className={cls.header}>
-            <Avatar
-              size={30}
-              src={article.user.avatar}
-            />
-            <Text
-              className={cls.username}
-              text={article.user.username}
-            />
-            <Text
-              className={cls.date}
-              text={article.createdAt}
-            />
+            <Avatar size={30} src={article.user.avatar} />
+            <Text className={cls.username} text={article.user.username} />
+            <Text className={cls.date} text={article.createdAt} />
           </div>
-          <Text
-            text={article.title}
-            className={cls.title}
-          />
+          <Text text={article.title} className={cls.title} />
           {types}
           <AppImage
             src={article.img}
             className={cls.img}
             alt={article.title}
-            fallback={<Skeleton width="100%" height={250} />}
+            fallback={<Skeleton width='100%' height={250} />}
           />
           {textBlock && (
             <ArticleTextBlockComponent
@@ -83,15 +69,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={getRouteArticleDetails(article.id)}
-            >
-              <Button
-                theme={ButtonTheme.OUTLINE}
-              >
-                {t('Read')}
-              </Button>
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
+              <Button theme={ButtonTheme.OUTLINE}>{t('Read')}</Button>
             </AppLink>
             {views}
           </div>
@@ -103,7 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       target={target}
-      data-testid="ArticleListItem"
+      data-testid='ArticleListItem'
       to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
@@ -115,19 +94,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
             fallback={<Skeleton width={200} height={200} />}
           />
-          <Text
-            className={cls.date}
-            text={article.createdAt}
-          />
+          <Text className={cls.date} text={article.createdAt} />
         </div>
         <div className={cls.infoWrapper}>
           {types}
           {views}
         </div>
-        <Text
-          text={article.title}
-          className={cls.title}
-        />
+        <Text text={article.title} className={cls.title} />
       </Card>
     </AppLink>
   );

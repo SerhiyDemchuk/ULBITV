@@ -10,7 +10,6 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 interface SidebarItemProps {
   item: SidebarItemType;
   collapsed: boolean;
-
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
@@ -28,9 +27,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       theme={AppLinkTheme.SECONDARY}
     >
       <item.Icon className={cls.icon} />
-      <span className={cls.link}>
-        {t(item.text)}
-      </span>
+      <span className={cls.link}>{t(item.text)}</span>
     </AppLink>
   );
 });

@@ -38,14 +38,17 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   return (
     <Dropdown
-      direction="bottom left"
+      direction='bottom left'
       className={classNames(cls.AvatarDropdown, {}, [className])}
       items={[
-        ...(isAdminPanelAvailable ? [
-          {
-            content: t('Admin'),
-            href: getRouteAdmin(),
-          }] : []),
+        ...(isAdminPanelAvailable
+          ? [
+              {
+                content: t('Admin'),
+                href: getRouteAdmin(),
+              },
+            ]
+          : []),
         {
           content: t('Profile'),
           href: getRouteProfile(authData.id),

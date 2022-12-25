@@ -8,7 +8,10 @@ import React, {
 import cls from './Input.module.scss';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>;
 
 interface InputProps extends HTMLInputProps {
   value?: string | number;
@@ -66,9 +69,7 @@ export const Input = memo((props: InputProps) => {
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])}>
       {placeholder && (
-        <div className={cls.placeholder}>
-          {`${placeholder}>`}
-        </div>
+        <div className={cls.placeholder}>{`${placeholder}>`}</div>
       )}
       <div className={cls.caretWrapper}>
         <input

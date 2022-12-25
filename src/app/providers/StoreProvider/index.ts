@@ -10,7 +10,4 @@ export type {
 
 export type { AppDispatch };
 
-export {
-  StoreProvider,
-  createReduxStore,
-};
+export { StoreProvider, createReduxStore };

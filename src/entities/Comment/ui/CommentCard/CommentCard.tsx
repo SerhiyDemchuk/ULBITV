@@ -15,40 +15,44 @@ interface CommentCardProps {
   isLoading?: boolean;
 }
 
-export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
-  if (isLoading) {
+export const CommentCard = memo(
+  ({ className, comment, isLoading }: CommentCardProps) => {
+    if (isLoading) {
+      return (
+        <VStack
+          max
+          gap='8'
+          data-testid='CommentCard.Loading'
+          className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+        >
+          <div className={cls.header}>
+            <Skeleton width={30} height={30} border='50%' />
+            <Skeleton width={100} height={16} className={cls.username} />
+          </div>
+          <Skeleton className={cls.text} width='100%' height={50} />
+        </VStack>
+      );
+    }
+
+    if (!comment) {
+      return null;
+    }
+
     return (
       <VStack
         max
-        gap="8"
-        data-testid="CommentCard.Loading"
-        className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+        gap='8'
+        data-testid='CommentCard.Content'
+        className={classNames(cls.CommentCard, {}, [className])}
       >
-        <div className={cls.header}>
-          <Skeleton width={30} height={30} border="50%" />
-          <Skeleton width={100} height={16} className={cls.username} />
-        </div>
-        <Skeleton className={cls.text} width="100%" height={50} />
+        <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
+          {comment.user.avatar ? (
+            <Avatar size={30} src={comment.user.avatar} />
+          ) : null}
+          <Text className={cls.username} title={comment.user.username} />
+        </AppLink>
+        <Text className={cls.text} text={comment.text} />
       </VStack>
     );
-  }
-
-  if (!comment) {
-    return null;
-  }
-
-  return (
-    <VStack
-      max
-      gap="8"
-      data-testid="CommentCard.Content"
-      className={classNames(cls.CommentCard, {}, [className])}
-    >
-      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
-        {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
-        <Text className={cls.username} title={comment.user.username} />
-      </AppLink>
-      <Text className={cls.text} text={comment.text} />
-    </VStack>
-  );
-});
+  },
+);
